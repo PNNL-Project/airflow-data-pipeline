@@ -1,0 +1,6 @@
+host name: myrds6510.cup5iuwqdfry.us-east-1.rds.amazonaws.com
+port: 3306
+user: admin
+password: 11111111
+database name: cs6510jeff
+database: ['seb_processed_data_time_shifted','zoneairflow_labeled_agg','zonetemp_labeled_agg']

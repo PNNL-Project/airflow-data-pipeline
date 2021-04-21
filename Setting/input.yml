@@ -1,0 +1,3 @@
+INTERVAL: ['1hour']
+COMMON: ['']
+DEVICE: ['[a-zA-Z0-9]*(?i:_zonetemperature)_','[a-zA-Z0-9]*(?i:_zoneairflow)_']
