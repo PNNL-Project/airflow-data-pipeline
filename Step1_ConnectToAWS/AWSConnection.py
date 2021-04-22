@@ -1,7 +1,3 @@
-# WARNING!!!
-# DO NOT UPLOAD DatabaseSetting.yaml TO GITHUB!
-# find it at https://drive.google.com/drive/folders/18mGDVWaXSrFJ0ikFktHV-iRB352x5PbN/
-
 import calendar
 import csv
 import time
