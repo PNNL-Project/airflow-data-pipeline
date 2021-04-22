@@ -28,5 +28,5 @@ Python files cannot be executed in 'DAG' directly. The way to run python files i
    ### (2)Change the 'start_date'(in dag) in 'myDAGtest.py' before starting a new schedule.
    ### (3)Run command 'airflow db init' when DAG files be updated. This command is used to refresh the database in Airflow to update all changes.
    ### (4)Airflow runs jobs at the end of an interval, not the beginning. This means that the first run of the job is going to be after the first interval. For example, a daily job(which starts at 0:00 a.m.) will be executed in the next day 0:00 a.m. .
-   ### (5)The ML model is placed under the 'Models' file. 'zone_airflow_model.joblib' is for the prediction of 'zoneairflow' devices, and 'zone_temperature_model.joblib' is for the prediction of 'zonetemperature' devices.
-   ### (6)The Order of the prediction labels does not matter, and label names can be changed in the 'ML_labels.yml' under 'Setting' file.
+   ### (5)The ML model is placed under the 'Models' folder. 'zone_airflow_model.joblib' is for the prediction of 'zoneairflow' devices, and 'zone_temperature_model.joblib' is for the prediction of 'zonetemperature' devices.
+   ### (6)The Order of the prediction labels does not matter, and label names can be changed in the 'ML_labels.yml' under 'Setting' folder.
