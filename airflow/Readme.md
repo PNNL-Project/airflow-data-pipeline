@@ -41,7 +41,8 @@ This script will install the libraries.
 
 The output should be
 
-![image](https://user-images.githubusercontent.com/56701482/115645460-6bd57700-a2ee-11eb-94e4-e71a2ffeb40e.png)
+![image](https://user-images.githubusercontent.com/56701482/115646548-5b260080-a2f0-11eb-89f6-f50b04fb48ca.png)
+
 
 
 **4.Run the following code sudo docker ps -a. This will show the list of docker services running**
