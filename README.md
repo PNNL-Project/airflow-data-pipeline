@@ -24,12 +24,26 @@ Python files cannot be executed in 'DAG' directly. The way to run python files i
    Airflow works automatically in the docker and provides the ’Alert service’ with daily prediction data. Prediction results will be defined as '-1' if there is anything wrong with the original device data. All the data is stored back in the AWS MySQL database.
 
 ## Directions:
-   ### (1)'DatabaseSetting.yaml' needs to be changed whenever creating a new project.
+   ### (1)'DatabaseSetting.yaml' needs to be changed whenever creating a new project. This yaml is used to change the MySQL database settings. Notice that the bottom line (circled in the picture below) represents the database tables queried. 
+![](images/database-setting-tables.png)
+     *What were the database tables used for?*
+     * *seb_processed_data_time_shifted*: used to query and process data to be run through ml model
+     * *zoneairflow_labeled_agg*: used to store the zone airflow prediction data
+     * *zonetemp_labeled_agg*: used to store the zone temperature prediction data
    ### (2)Change the 'start_date'(in dag) in 'myDAGtest.py' before starting a new schedule.
    ### (3)Run command 'airflow db init' when DAG files be updated. This command is used to refresh the database in Airflow to update all changes.
    ### (4)Airflow runs jobs at the end of an interval, not the beginning. This means that the first run of the job is going to be after the first interval. For example, a daily job(which starts at 0:00 a.m.) will be executed in the next day 0:00 a.m. .
-   ### (5)The ML model is placed under the 'Models' folder. 'zone_airflow_model.joblib' is for the prediction of 'zoneairflow' devices, and 'zone_temperature_model.joblib' is for the prediction of 'zonetemperature' devices.
-   ### (6)Label names are in the 'ML_labels.yml' file under 'Setting' folder. The order of labels is fixed, since each label (ie. summer occurence, hunting, etc) is assigned a certain number, which is tied to an index within the matrix of the ML model. 
+   ### (5)The ML models are placed under the 'Models' folder. 'zone_airflow_model.joblib' is for the prediction of 'zoneairflow' devices, and 'zone_temperature_model.joblib' is for the prediction of 'zonetemperature' devices. 
+   ### (6)Label names are in the 'ML_labels.yml' file under 'Setting' folder. 
+
+## What to do if the ML model needs to be changed:
+1. Replace the models in the [Models](https://github.com/PNNL-Project/airflow-data-pipeline/tree/master/Models) folder
+2. Make sure that the models labels located in [ML_labels.yml](https://github.com/PNNL-Project/airflow-data-pipeline/blob/master/Setting/ML_labels.yml) match *exactly* to the order of labels created when building the model. The code to build the models are located in these two Jupyter Notebooks: [zone_airflow_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zoneairflow_model_training.ipynb) & [zonetemp_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zonetemp_model_training.ipynb) 
+
+So for example, The following lists must match:
+![](images/database-setting-tables.png)
+![](images/training_zonetemp.png)
+![](images/training_zoneairflow.png)
 
 ## Steps to install Airflow
 
