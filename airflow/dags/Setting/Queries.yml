@@ -1,0 +1,9 @@
+SHOWALLDATABASES: show databases
+SHOWTABLENAMES: select table_name from information_schema.tables where table_schema = 'DATABASENAME'
+SHOWCOLUMNNAMES: select column_name from information_schema.columns where table_schema = 'DATABASENAME'
+SHOWDATABASETIMEZONE: select @@global.time_zone, @@session.time_zone
+SELECTDATETIME: select ITEMS from TABLENAME where datetime >= 'STARTDATE' and datetime <= 'ENDDATE'
+SELECTITEMS: select ITEMS from TABLENAME
+SHOWTOP1: select ITEMS from TABLENAME limit 1
+INSERT: insert into TABLENAME(FILEDS) values(VALUES)
+DELETEALL: truncate table TABLENAME
