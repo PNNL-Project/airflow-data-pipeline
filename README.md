@@ -30,3 +30,53 @@ Python files cannot be executed in 'DAG' directly. The way to run python files i
    ### (4)Airflow runs jobs at the end of an interval, not the beginning. This means that the first run of the job is going to be after the first interval. For example, a daily job(which starts at 0:00 a.m.) will be executed in the next day 0:00 a.m. .
    ### (5)The ML model is placed under the 'Models' folder. 'zone_airflow_model.joblib' is for the prediction of 'zoneairflow' devices, and 'zone_temperature_model.joblib' is for the prediction of 'zonetemperature' devices.
    ### (6)The Order of the prediction labels does not matter, and label names can be changed in the 'ML_labels.yml' under 'Setting' folder.
+
+## Steps to install Airflow
+
+Please follow the instructions below 
+
+System Tested : Ubuntu 20.0.4
+Requirements : Need to have docker installed on the system
+
+Please run the scripts in the airflow folder in the following order
+
+Please note that you need to have root access to run these scripts.
+
+### 1. Run the airflow_install_step1.sh
+
+Command : sudo ./airflow_install_step1.sh
+
+This script will initialize the airflow containers
+
+Please see to that the script does cause any errors
+
+### 2. Run the airflow_install_step2.sh
+
+Command : sudo ./airflow_install_step2.sh
+
+The script will run the docker containers and install all the services and start airflow services
+
+### 3. Run the airflow_install_libraries.sh
+
+Command : sudo ./airflow_install_libraries.sh
+
+This script will install the libraries.
+
+#### 4.Run the following code sudo docker ps -a. This will show the list of docker services running
+****
+
+Trouble Shooting:
+
+If see the DAGS are not initialize . Please follow the following steps
+
+#### 1. Go to airflow_install directory. You need to have root access.
+
+#### 2. Run the airflow.sh script
+
+Command : sudo ./airflow.sh bash
+
+In this will open the command line of the container .
+
+run the airflow db init
+
+This will initialize the dags
