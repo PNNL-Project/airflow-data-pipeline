@@ -21,7 +21,7 @@ Python files cannot be executed in 'DAG' directly. The way to run python files i
 
 
 ## Relationship With Other Services: 
-   Airflow works automatically in the docker and provides the ’Hunting service’ with daily prediction data. Prediction results will be defined as '-1' if there is anything wrong with the original device data. All the data is uploaded preserved in the AWS MySQL database.
+   Airflow works automatically in the docker and provides the ’Alert service’ with daily prediction data. Prediction results will be defined as '-1' if there is anything wrong with the original device data. All the data is stored back in the AWS MySQL database.
 
 ## Directions:
    ### (1)'DatabaseSetting.yaml' needs to be changed whenever creating a new project.
