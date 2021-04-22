@@ -38,7 +38,7 @@ Python files cannot be executed in 'DAG' directly. The way to run python files i
 
 ## What to do if the ML model needs to be changed:
 1. Replace the models in the [Models](https://github.com/PNNL-Project/airflow-data-pipeline/tree/master/Models) folder
-2. Make sure that the models labels located in [ML_labels.yml](https://github.com/PNNL-Project/airflow-data-pipeline/blob/master/Setting/ML_labels.yml) match *exactly* to the order of labels created when building the model. The code to build the models are located in these two Jupyter Notebooks: [zone_airflow_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zoneairflow_model_training.ipynb) & [zonetemp_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zonetemp_model_training.ipynb) 
+2. Make sure that the data pipeline model labels located in [ML_labels.yml](https://github.com/PNNL-Project/airflow-data-pipeline/blob/master/Setting/ML_labels.yml) match **exactly** to the order of labels created when building the model. The code to build the models are located in these two Jupyter Notebooks: [zone_airflow_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zoneairflow_model_training.ipynb) & [zonetemp_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zonetemp_model_training.ipynb) 
 
 So for example, The following lists must match:
 ![](images/airflow-labels.png)
