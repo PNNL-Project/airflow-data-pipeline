@@ -41,7 +41,7 @@ Python files cannot be executed in 'DAG' directly. The way to run python files i
 2. Make sure that the models labels located in [ML_labels.yml](https://github.com/PNNL-Project/airflow-data-pipeline/blob/master/Setting/ML_labels.yml) match *exactly* to the order of labels created when building the model. The code to build the models are located in these two Jupyter Notebooks: [zone_airflow_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zoneairflow_model_training.ipynb) & [zonetemp_model_training.ipynb](https://github.com/PNNL-Project/ml-models/blob/master/zonetemp_model_training.ipynb) 
 
 So for example, The following lists must match:
-![](images/database-setting-tables.png)
+![](images/airflow-labels.png)
 ![](images/training_zonetemp.png)
 ![](images/training_zoneairflow.png)
 
