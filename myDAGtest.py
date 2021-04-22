@@ -29,64 +29,71 @@ task_start = PythonOperator(
 
 task_create_folder = BashOperator(
     task_id="task_create_folder",
+    # Must take a space at the end of the line
     bash_command='/opt/airflow/dags/create_folder.sh "{{ execution_date }}" ',
     dag=dag)
 
 
 task_download = BashOperator(
     task_id='task_download',
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_download.py "{{ execution_date }}" ',
     do_xcom_push=True,
     dag=dag)
 
 task_download_zoneTemperature = BashOperator(
     task_id="task_download_zoneTemperature",
+    # Must take a space at the end of the line
     bash_command='echo task_download_zoneTemperature ',
     dag=dag
 )
 task_download_zoneAirflow = BashOperator(
     task_id="task_download_zoneAirflow",
+    # Must take a space at the end of the line
     bash_command='echo task_download_zoneAirflow ',
     dag=dag
 )
 task_zoneAirflow_predict = BashOperator(
     task_id='task_zoneAirflow_predict',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_predict.py "{{ ti.xcom_pull(task_ids="task_download", key="return_value") }}" "zoneAirflow" "{{ execution_date }}" ',
     dag=dag)
 
 task_predict_zoneAirflow = BashOperator(
     task_id="task_predict_zoneAirflow",
+    # Must take a space at the end of the line
     bash_command='echo task_predict_zoneAirflow ',
     dag=dag
 )
 
 task_zoneAirflow_upload = BashOperator(
     task_id='task_zoneAirflow_upload',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_upload.py "{{ ti.xcom_pull(task_ids="task_download", key="return_value") }}" "zoneAirflow" "{{ execution_date }}" ',
     dag=dag)
 
 task_zoneTemperature_predict = BashOperator(
     task_id='task_zoneTemperature_predict',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_predict.py "{{ ti.xcom_pull(task_ids="task_download", key="return_value") }}" "zoneTemperature" "{{ execution_date }}" ',
     dag=dag)
 
 task_predict_zoneTemperature = BashOperator(
     task_id="task_predict_zoneTemperature",
+    # Must take a space at the end of the line
     bash_command='echo task_predict_zoneTemperature ',
     dag=dag
 )
 
 task_zoneTemperature_upload = BashOperator(
     task_id='task_zoneTemperature_upload',
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_upload.py "{{ ti.xcom_pull(task_ids="task_download", key="return_value") }}" "zoneTemperature" "{{ execution_date }}" ',
     dag=dag)
 
 task_zoneAirflow_failure = BashOperator(
     task_id='task_zoneAirflow_failure',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_upload_failure.py "{{ ti.xcom_pull(task_ids="task_download", key="return_value") }}" "zoneAirflow" ',
     trigger_rule='one_failed',
     dag=dag)
@@ -94,21 +101,21 @@ task_zoneAirflow_failure = BashOperator(
 
 task_zoneTemperature_failure = BashOperator(
     task_id='task_zoneTemperature_failure',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='python3 /opt/airflow/dags/task_upload_failure.py "{{ ti.xcom_pull(task_ids="task_download", key="return_value") }}" "zoneTemperature" ',
     trigger_rule='one_failed',
     dag=dag)
 
 task_failure = BashOperator(
     task_id='task_failure',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='/opt/airflow/dags/remove_cache.sh "{{ execution_date }}" ',
     trigger_rule='one_failed',
     dag=dag)
 
 task_success = BashOperator(
     task_id='task_success',
-    # Must have a space
+    # Must take a space at the end of the line
     bash_command='/opt/airflow/dags/remove_cache.sh "{{ execution_date }}" ',
     trigger_rule='all_success',
     dag=dag)
