@@ -49,7 +49,7 @@ The output should be
 
 **Trouble Shooting:**
 
-If see the DAGS are not initialize . Please follow the following steps
+If see the DAGS are not initialized . Please follow the following steps
 
 1. Go to airflow_install directory. You need to have root access.
 
