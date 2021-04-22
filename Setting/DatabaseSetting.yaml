@@ -1,6 +1,6 @@
-host name: myrds6510.cup5iuwqdfry.us-east-1.rds.amazonaws.com
+host name: <insert database endpoint>
 port: 3306
-user: admin
-password: 11111111
-database name: cs6510jeff
+user: <insert database username>
+password: <insert password>
+database name: <insert database name>
 database: ['seb_processed_data_time_shifted','zoneairflow_labeled_agg','zonetemp_labeled_agg']
