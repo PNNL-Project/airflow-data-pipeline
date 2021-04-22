@@ -1,0 +1,9 @@
+pip install nltk
+
+PyYAML~=5.1
+DateTime~=4.3
+joblib~=1.0.1
+mysqlclient~=1.4.2.post1
+pytz~=2018.3
+numpy~=1.20.1
+scipy~=1.6.0

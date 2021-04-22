@@ -1,0 +1,2 @@
+ZONETEMPERATURE: ['Summer Occurrence','Controlled Summer','Controlled Winter','Override Release']
+ZONEAIRFLOW: ['Normal Operation', 'Hunting', 'Constant', 'Override']
